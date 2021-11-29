@@ -5,7 +5,6 @@ Notes:
     - Uses Selenium & Chrome. Requires Chrome Selenium driver extension
         - https://sites.google.com/chromium.org/driver/
         - Mac users need to place in /usr/local/bin/ or add the .exec to path
-    - Must already be logged into Venmo & Verizon websites on Chrome
 """
 from selenium import webdriver
 from selenium.webdriver.common.by import By
