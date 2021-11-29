@@ -15,7 +15,7 @@ from secrets import *
 
 
 def main():
-    driver = webdriver.Chrome()
+    driver = webdriver.Firefox()
     driver.get("https://www.verizonwireless.com/my-verizon/")
     try:
         user = WebDriverWait(driver, 25).until(

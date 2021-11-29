@@ -3,5 +3,8 @@
 .vscode/
 __pycache__/
 
+# files
+*.log
+
 # secrets
 secrets.py
