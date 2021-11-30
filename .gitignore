@@ -5,6 +5,8 @@ __pycache__/
 
 # files
 *.log
+.ipynb_checkpoints/
+*.ipynb
 
 # secrets
 secrets.py
