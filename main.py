@@ -2,8 +2,7 @@
 Purpose: To automate Venmo requesting money for our Verizon phone plan
 
 Notes:
-    - Uses Selenium & Chrome. Requires Chrome Selenium driver extension
-        - https://sites.google.com/chromium.org/driver/
+    - Uses Selenium. Requires Selenium driver extension
         - Mac users need to place in /usr/local/bin/ or add the .exec to path
 """
 import time
