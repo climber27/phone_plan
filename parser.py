@@ -10,4 +10,4 @@ class Parser:
             if '.' in line and '$' in line and 5 <= len(line) <= 10:
                 charges.append(line)
 
-        return charges  # return every other since the website duplicates
+        return charges
