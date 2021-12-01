@@ -33,12 +33,11 @@ class Parser:
         :return:
         """
         people = []
-        for user in sorted(self.config["phone plan"]["people"], key=lambda x: x["order"]):
-            person = Person(user["name"])
-            person.venmo_id = user["venmo id"]
-            for _ in user["devices"]:
-                charge = float(charges.popleft()[1:])
-                person.debt += charge
+        for obj in sorted(self.config["phone plan"]["people"], key=lambda x: x["order"]):
+            person = Person(obj["name"])
+            person.venmo_id = obj["venmo id"]
+            for _ in obj["devices"]:
+                person.debt += float(charges.popleft()[1:])
             people.append(person)
 
         # log
@@ -48,5 +47,8 @@ class Parser:
             print("name: {}, debt: {}".format(p.name, p.debt))
 
         print("TOTAL: {}".format(total))
+
+        if total > 235:
+            raise AssertionError("Please double check cost")
 
         return people

@@ -14,7 +14,7 @@ def main():
     :return: None
     """
     # config
-    with open("./people.json") as file:
+    with open("config.json") as file:
         config = json.load(file)
 
     driver = webdriver.Firefox()

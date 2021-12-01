@@ -21,7 +21,7 @@ class Venmo:
         :return:
         """
         for person in people:
-            if person not in self.config["phone plan"]["skip"]:
+            if person.name not in self.config["phone plan"]["skip"]:
                 self.api.payment.request_money(person.debt, "Verizon Phone Bill", person.venmo_id)
 
     def logout(self):
