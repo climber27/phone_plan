@@ -1,10 +1,3 @@
-"""
-Purpose: To automate Venmo requesting money for our Verizon phone plan
-
-Notes:
-    - Uses Selenium. Requires Selenium driver extension
-        - Mac users need to place in /usr/local/bin/ or add the .exec to path
-"""
 import time
 import json
 from selenium import webdriver
@@ -14,6 +7,12 @@ from person import Person
 
 
 def main():
+    """Program main function / driver
+
+    Purpose: To automate Venmo requesting money for our Verizon phone plan
+
+    :return: None
+    """
     # config
     with open("./people.json") as file:
         config = json.load(file)
@@ -34,12 +33,6 @@ def main():
 
     # Assign costs
     people = parser.assign_costs(charges)
-    total = 0.0
-    for p in people:
-        total += p.debt
-        print("name: {}, debt: {}".format(p.name, p.debt))
-
-    print("TOTAL: {}".format(total))
 
     # driver.close()
 

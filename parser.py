@@ -5,10 +5,19 @@ from person import Person
 
 class Parser:
     def __init__(self, config):
+        """
+
+        :param config:
+        """
         self.config = config
 
     @staticmethod
     def parse_billing_info(info):
+        """
+
+        :param info:
+        :return:
+        """
         charges = deque()
         for elem in info:
             line = elem.text
@@ -18,6 +27,11 @@ class Parser:
         return charges
 
     def assign_costs(self, charges):
+        """
+
+        :param charges:
+        :return:
+        """
         people = []
         for user in sorted(self.config["phone plan"]["people"], key=lambda x: x["order"]):
             person = Person(user["name"])
@@ -26,5 +40,13 @@ class Parser:
                 charge = float(charges.popleft()[1:])
                 person.debt += charge
             people.append(person)
+
+        # log
+        total = 0.0
+        for p in people:
+            total += p.debt
+            print("name: {}, debt: {}".format(p.name, p.debt))
+
+        print("TOTAL: {}".format(total))
 
         return people

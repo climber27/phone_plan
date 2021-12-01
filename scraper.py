@@ -7,9 +7,17 @@ from secrets import *
 
 class Scraper:
     def __init__(self, driver):
+        """
+
+        :param driver:
+        """
         self.driver = driver
 
     def login(self):
+        """
+
+        :return:
+        """
         self.driver.get("https://www.verizonwireless.com/my-verizon/")
         try:
             user = WebDriverWait(self.driver, 25).until(
@@ -24,6 +32,10 @@ class Scraper:
             print(e)
 
     def get_billing(self):
+        """
+
+        :return:
+        """
         self.driver.get("https://www.verizon.com/digital/nsa/secure/ui/bill/viewbill/")
         # wait for page to load
         time.sleep(3)
