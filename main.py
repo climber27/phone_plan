@@ -29,18 +29,11 @@ def main():
 
     # Go to billing
     spans = scraper.get_billing()
-    parser = Parser()
+    parser = Parser(config)
     charges = parser.parse_billing_info(spans)
 
     # Assign costs
-    people = []
-    for user in sorted(config["phone plan"]["people"], key=lambda x: x["order"]):
-        person = Person(user["name"])
-        for _ in user["devices"]:
-            charge = float(charges.popleft()[1:])
-            person.debt += charge
-        people.append(person)
-
+    people = parser.assign_costs(charges)
     total = 0.0
     for p in people:
         total += p.debt
