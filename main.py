@@ -18,7 +18,7 @@ def main():
         config = json.load(file)
 
     driver = webdriver.Firefox()
-    scraper = Scraper(driver)
+    scraper = Scraper(driver, config)
 
     # login
     scraper.login()
