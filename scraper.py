@@ -42,7 +42,7 @@ class Scraper:
         """
         self.driver.get(self.config["phone plan"]["billing url"])
         # wait for page to load
-        time.sleep(3)
+        time.sleep(5)
         info = self.driver.find_elements(By.TAG_NAME, self.config["phone plan"]["billing element"])
 
         return info

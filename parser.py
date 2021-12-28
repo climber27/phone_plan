@@ -22,7 +22,7 @@ class Parser:
         for elem in info:
             line = elem.text
             if '.' in line and '$' in line and 5 <= len(line) <= 10:
-                charges.append(float(line[:1]))  # removes $ and casts str to float
+                charges.append(float(line[1:]))  # removes $ and casts str to float
 
         return charges
 
@@ -47,7 +47,7 @@ class Parser:
 
         print("TOTAL: {}".format(total))
 
-        if total > 235:
+        if total > 300:
             raise AssertionError("Please double check cost")
 
         return people

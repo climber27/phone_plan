@@ -4,6 +4,7 @@ from selenium import webdriver
 from parser import Parser
 from scraper import Scraper
 from person import Person
+from venmo import Venmo
 
 
 def main():
@@ -33,6 +34,11 @@ def main():
 
     # Assign costs
     people = parser.assign_costs(charges)
+
+    # charge
+    venmo = Venmo(config)
+    venmo.collect(people=people)
+    venmo.logout()
 
     # driver.close()
 
