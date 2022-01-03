@@ -51,9 +51,9 @@ def main():
 
     # charge
     logging.info("Sending out Venmos...")
-    # venmo = Venmo(config)
-    # venmo.collect(people=people)
-    # venmo.logout()
+    venmo = Venmo(config)
+    venmo.collect(people=people)
+    venmo.logout()
     logging.info("done")
 
     # driver.close()
