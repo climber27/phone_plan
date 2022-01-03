@@ -1,3 +1,5 @@
+import logging
+
 from person import Person
 from secrets import VENMO_USERNAME, VENMO_PASSWORD
 from venmo_api import Client
@@ -22,15 +24,19 @@ class Venmo:
         """
         for person in people:
             if person.name not in self.config["phone plan"]["skip"]:
+                logging.info("Sending {} a venmo request...".format(person.name))
                 self.api.payment.request_money(
                     person.debt,
                     self.config["phone plan"]["venmo message"],
                     person.venmo_id
                 )
+                logging.info("done")
 
     def logout(self):
         """Logout of Venmo session
 
         :return: None
         """
+        logging.info("logging out of Venmo...")
         self.api.log_out("Bearer " + self.access_token)
+        logging.info("done")

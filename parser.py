@@ -1,3 +1,4 @@
+import logging
 from collections import deque
 from typing import List
 from selenium.webdriver.remote.webelement import WebElement
@@ -43,11 +44,12 @@ class Parser:
         total = 0.0
         for p in people:
             total += p.debt
-            print("name: {}, debt: {}".format(p.name, p.debt))
+            logging.info("name: {}, debt: {0:.2f}".format(p.name, p.debt))
 
-        print("TOTAL: {}".format(total))
+        logging.info("TOTAL: {}".format(total))
 
-        if total > 300:
-            raise AssertionError("Please double check cost")
+        user_input = input("Do you wish to proceed? (y/n)")
+        if user_input.lower() != "y":
+            raise AssertionError("The user has aborted the program.")
 
         return people
