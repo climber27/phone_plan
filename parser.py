@@ -44,7 +44,7 @@ class Parser:
         total = 0.0
         for p in people:
             total += p.debt
-            logging.info("name: {}, debt: {0:.2f}".format(p.name, p.debt))
+            logging.info("name: {0}, debt: {1:.2f}".format(p.name, p.debt))
 
         logging.info("TOTAL: {}".format(total))
 
