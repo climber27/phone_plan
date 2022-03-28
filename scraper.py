@@ -4,7 +4,7 @@ from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 import time
-from secrets import *
+from secrets import VERIZON_USERNAME, VERIZON_PASSWORD
 
 
 class Scraper:
@@ -42,7 +42,7 @@ class Scraper:
         """
         self.driver.get(self.config["phone plan"]["billing url"])
         # wait for page to load
-        time.sleep(5)
+        time.sleep(self.config["phone plan"]["billing page load time"])
         info = self.driver.find_elements(By.TAG_NAME, self.config["phone plan"]["billing element"])
 
         return info

@@ -1,0 +1,26 @@
+{
+  "phone plan": {
+    "people": [
+      {
+        "name": "",
+        "venmo id": "",
+        "devices": [
+          "iphone"
+        ],
+        "order": 0
+      }
+    ],
+    "skip": {
+      "David D'lima": ""
+    },
+    "login url": "",
+    "username element": "",
+    "password element": "",
+    "login element": "",
+    "billing url": "",
+    "billing element": "",
+    "2FA time": 0,
+    "billing page load time": 0,
+    "venmo message": ""
+  }
+}

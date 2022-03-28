@@ -1,0 +1,10 @@
+name: phone
+channels:
+  - default
+dependencies:
+  - python=3.9
+  - pip
+  - typing
+  - pip:
+    - selenium
+    - venmo_api
