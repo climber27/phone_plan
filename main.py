@@ -4,6 +4,7 @@ import logging
 from selenium import webdriver
 from parser import Parser
 from scraper import Scraper
+from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 from person import Person
 from venmo import Venmo
 
@@ -51,9 +52,9 @@ def main():
 
     # charge
     logging.info("Sending out Venmos...")
-    # venmo = Venmo(config)
-    # venmo.collect(people=people)
-    # venmo.logout()
+    venmo = Venmo(config)
+    venmo.collect(people=people)
+    venmo.logout()
     logging.info("done")
 
     # driver.close()

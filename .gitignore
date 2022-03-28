@@ -12,3 +12,4 @@ __pycache__/
 # secrets
 secrets.py
 config.json
+._config.json
